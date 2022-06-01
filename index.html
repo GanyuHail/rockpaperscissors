@@ -13,19 +13,20 @@ function computerPlay(choices) {
  
 const choices = ["Rock", "Paper", "Scissors"];
 
-console.log(computerPlay(choices));
-
     const playerSelection = "rock";
     const computerSelection = computerPlay(choices);
 
     function playRound(playerSelection, computerSelection) {
-      if (computerPlay() = "Rock")
+      if (computerSelection === "Rock")
       return "Tie!";
-      if (computerPlay() = "Paper")
+      else if (computerSelection === "Paper")
       return "Computer Wins!";
-      if (computerPlay() = "Scissors")
+      else if (computerSelection === "Scissors")
       return "You Win!";
     }  
+
+    console.log(computerSelection);
+    console.log(playRound(playerSelection, computerSelection));
 
 </script>
 </body>
