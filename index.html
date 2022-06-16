@@ -13,27 +13,27 @@ function computerPlay(choices) {
  
 const choices = ["Rock", "Paper", "Scissors"];
 
-    var playerSelection = prompt("Rock, Paper or Scissors?");
+    var playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
     const computerSelection = computerPlay(choices);
 
     function playRound(playerSelection, computerSelection) { 
-      if (playerSelection === "Rock" && computerSelection === "Rock")
+      if (playerSelection === "rock" && computerSelection === "Rock")
       return "Tie!";
-      else if (playerSelection === "Rock" && computerSelection === "Paper")
+      else if (playerSelection === "rock" && computerSelection === "Paper")
       return "Computer Wins!";
-      else if (playerSelection === "Rock" && computerSelection === "Scissors")
+      else if (playerSelection === "rock" && computerSelection === "Scissors")
       return "You Win!";
-      else if (playerSelection === "Paper" && computerSelection === "Rock")
+      else if (playerSelection === "paper" && computerSelection === "Rock")
       return "You Win!";
-      else if (playerSelection === "Paper" && computerSelection === "Paper")
+      else if (playerSelection === "paper" && computerSelection === "Paper")
       return "Tie!";
-      else if (playerSelection === "Paper" && computerSelection === "Scissors")
+      else if (playerSelection === "paper" && computerSelection === "Scissors")
       return "Computer Wins!";
-      else if (playerSelection === "Scissors" && computerSelection === "Rock")
+      else if (playerSelection === "scissors" && computerSelection === "Rock")
       return "Computer Wins!";
-      else if (playerSelection === "Scissors" && computerSelection === "Paper")
+      else if (playerSelection === "scissors" && computerSelection === "Paper")
       return "You Win!";
-      else if (playerSelection === "Scissors" && computerSelection === "Scissors")
+      else if (playerSelection === "scissors" && computerSelection === "Scissors")
       return "Tie!";
     }  
 
