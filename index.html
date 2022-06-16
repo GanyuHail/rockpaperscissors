@@ -13,16 +13,28 @@ function computerPlay(choices) {
  
 const choices = ["Rock", "Paper", "Scissors"];
 
-    const playerSelection = "rock";
+    var playerSelection = prompt("Rock, Paper or Scissors?");
     const computerSelection = computerPlay(choices);
 
-    function playRound(playerSelection, computerSelection) {
-      if (computerSelection === "Rock")
+    function playRound(playerSelection, computerSelection) { 
+      if (playerSelection === "Rock" && computerSelection === "Rock")
       return "Tie!";
-      else if (computerSelection === "Paper")
+      else if (playerSelection === "Rock" && computerSelection === "Paper")
       return "Computer Wins!";
-      else if (computerSelection === "Scissors")
+      else if (playerSelection === "Rock" && computerSelection === "Scissors")
       return "You Win!";
+      else if (playerSelection === "Paper" && computerSelection === "Rock")
+      return "You Win!";
+      else if (playerSelection === "Paper" && computerSelection === "Paper")
+      return "Tie!";
+      else if (playerSelection === "Paper" && computerSelection === "Scissors")
+      return "Computer Wins!";
+      else if (playerSelection === "Scissors" && computerSelection === "Rock")
+      return "Computer Wins!";
+      else if (playerSelection === "Scissors" && computerSelection === "Paper")
+      return "You Win!";
+      else if (playerSelection === "Scissors" && computerSelection === "Scissors")
+      return "Tie!";
     }  
 
     console.log(computerSelection);
