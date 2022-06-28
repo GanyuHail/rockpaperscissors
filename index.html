@@ -1,51 +1,54 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>Rock Paper Scissors</title>
 </head>
+
 <body>
   <script>
 
-function computerPlay(choices) {
-   return choices[Math.floor(Math.random() * choices.length)];
- }
-
- const choices = ["Rock", "Paper", "Scissors"];
-
- var playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
- var computerSelection = computerPlay(choices);
-  var cpuCounter = 0;
-  var playerCounter = 0;
-
-   function playRound(playerSelection, computerSelection) {
-
-if 
-    ((playerSelection === "rock" && computerSelection === "Rock") ||
-    (playerSelection === "paper" && computerSelection === "Paper") ||
-    (playerSelection === "scissors" && computerSelection === "Scissors")) {
-      return ["Tie " + "Player Score: " + playerCounter + " " + "Computer Score: " + cpuCounter]; 
+    function computerPlay(choices) {
+      return choices[Math.floor(Math.random() * choices.length)];
     }
-  
-else if 
-    ((playerSelection === "rock" && computerSelection === "Paper") ||
-    (playerSelection === "paper" && computerSelection === "Scissors") ||
-    (playerSelection === "scissors" && computerSelection === "Rock")) {
-      cpuCounter += 1; 
-      return ["Computer wins round " + "Player Score: " + playerCounter + " " + "Computer Score: " + cpuCounter]; 
-    }
-  
-else if
-    ((playerSelection === "rock" && computerSelection === "Scissors") ||
-    (playerSelection === "paper" && computerSelection === "Rock") ||
-    (playerSelection === "scissors" && computerSelection === "Paper")) {
-      playerCounter += 1; 
-      return ["Player wins round " + "Player Score: " + playerCounter + " " + "Computer Score: " + cpuCounter]; 
-    }
-};
 
-alert(playRound(playerSelection, computerSelection));
+    const choices = ["Rock", "Paper", "Scissors"];
 
-</script>
+    var playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
+    var computerSelection = computerPlay(choices);
+    var cpuCounter = 0;
+    var playerCounter = 0;
+
+    function playRound(playerSelection, computerSelection) {
+
+      if
+        ((playerSelection === "rock" && computerSelection === "Rock") ||
+        (playerSelection === "paper" && computerSelection === "Paper") ||
+        (playerSelection === "scissors" && computerSelection === "Scissors")) {
+        return ["Tie! --- " + "Player Score: " + playerCounter + " | " + "Computer Score: " + cpuCounter];
+      }
+
+      else if
+        ((playerSelection === "rock" && computerSelection === "Paper") ||
+        (playerSelection === "paper" && computerSelection === "Scissors") ||
+        (playerSelection === "scissors" && computerSelection === "Rock")) {
+        cpuCounter += 1;
+        return ["Computer wins round --- " + "Player Score: " + playerCounter + " | " + "Computer Score: " + cpuCounter];
+      }
+
+      else if
+        ((playerSelection === "rock" && computerSelection === "Scissors") ||
+        (playerSelection === "paper" && computerSelection === "Rock") ||
+        (playerSelection === "scissors" && computerSelection === "Paper")) {
+        playerCounter += 1;
+        return ["Player wins round --- " + "Player Score: " + playerCounter + " | " + "Computer Score: " + cpuCounter];
+      }
+    };
+
+    alert(playRound(playerSelection, computerSelection));
+
+  </script>
 </body>
+
 </html>
