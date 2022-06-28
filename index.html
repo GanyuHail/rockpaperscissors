@@ -15,10 +15,15 @@
 
     const choices = ["Rock", "Paper", "Scissors"];
 
-    var playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
     var computerSelection = computerPlay(choices);
     var cpuCounter = 0;
     var playerCounter = 0;
+
+    while (playerCounter < 5 && cpuCounter < 5) {
+      var playerSelection = prompt("Rock, Paper or Scissors? First to 5!").toLowerCase();
+      var computerSelection = computerPlay(choices);
+      playRound(playerSelection, computerSelection);
+    }
 
     function playRound(playerSelection, computerSelection) {
 
@@ -47,11 +52,6 @@
       alert(result);
     }
 
-    while (playerCounter < 5 && cpuCounter < 5) {
-      var playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
-      var computerSelection = computerPlay(choices);
-      playRound(playerSelection, computerSelection);
-    }
     while (playerCounter >= 5 || cpuCounter >= 5) {
       endGame();
     }
