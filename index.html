@@ -14,7 +14,7 @@
     }
 
     const choices = ["Rock", "Paper", "Scissors"];
-
+    
     var playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
     var computerSelection = computerPlay(choices);
     var cpuCounter = 0;
@@ -26,7 +26,7 @@
         ((playerSelection === "rock" && computerSelection === "Rock") ||
         (playerSelection === "paper" && computerSelection === "Paper") ||
         (playerSelection === "scissors" && computerSelection === "Scissors")) {
-        result = ["Tie! --- " + "Player Score: " + playerCounter + " | " + "Computer Score: " + cpuCounter];
+        result = ["Tie! --- " + "Player Score: " + playerCounter + " | " + "Computer Score: " + cpuCounter + "\nComputer Chose: " + computerSelection];
       }
 
       else if
@@ -34,7 +34,7 @@
         (playerSelection === "paper" && computerSelection === "Scissors") ||
         (playerSelection === "scissors" && computerSelection === "Rock")) {
         cpuCounter += 1;
-        result = ["Computer wins round --- " + "Player Score: " + playerCounter + " | " + "Computer Score: " + cpuCounter];
+        result = ["Computer wins round --- " + "Player Score: " + playerCounter + " | " + "Computer Score: " + cpuCounter + "\nComputer Chose: " + computerSelection];
       }
 
       else if
@@ -42,12 +42,13 @@
         (playerSelection === "paper" && computerSelection === "Rock") ||
         (playerSelection === "scissors" && computerSelection === "Paper")) {
         playerCounter += 1;
-        result = ["Player wins round --- " + "Player Score: " + playerCounter + " | " + "Computer Score: " + cpuCounter];
+        result = ["Player wins round --- " + "Player Score: " + playerCounter + " | " + "Computer Score: " + cpuCounter + "\nComputer Chose: " + computerSelection];
       }
       alert(result);
     }
 
     while (playerCounter < 5 && cpuCounter < 5) {
+      var playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
       playRound(playerSelection, computerSelection);
     }
     while (playerCounter >= 5 || cpuCounter >= 5) {
@@ -61,7 +62,6 @@
         alert2 = "Game Over! You Lost!";
       }
       alert(alert2);
-      return;
     }
   </script>
 </body>
