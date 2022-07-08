@@ -8,9 +8,9 @@
 
 <body>
   <div style="margin-bottom: 20px">
-    <input type="button" value="rock"></input>
-    <input type="button" value="paper"></input>
-    <input type="button" value="scissors"></input>
+    <input type="button" value="Rock"></input>
+    <input type="button" value="Paper"></input>
+    <input type="button" value="Scissors"></input>
   </div>
   <div id="result"></div>
   <div>
@@ -20,10 +20,11 @@
   <script>
 
     const buttons = document.querySelectorAll('input')
+    const resetBtn = document.querySelector('#reset');
     let choices = ["Rock", "Paper", "Scissors"];
 
     function computerPlay(choices) {
-      
+
       return choices[Math.floor(Math.random() * choices.length)];
     }
 
@@ -31,40 +32,59 @@
     var cpuCounter = 0;
     var playerCounter = 0;
 
-
-
     function playRound(playerSelection) {
       let result = ""
       let computerSelection = computerPlay(choices);
 
       if
-        ((playerSelection === "rock" && computerSelection === "Rock") ||
-        (playerSelection === "paper" && computerSelection === "Paper") ||
-        (playerSelection === "scissors" && computerSelection === "Scissors")) {
-        result = ["Tie!" + "\nPlayer Score: " + playerCounter + " | " + "Computer Score: " + cpuCounter]
+        ((playerSelection === "Rock" && computerSelection === "Rock") ||
+        (playerSelection === "Paper" && computerSelection === "Paper") ||
+        (playerSelection === "Scissors" && computerSelection === "Scissors")) {
+        result = ["Tie!" + "\nPlayer Score: " + playerCounter + " | " + "Computer Score: " + cpuCounter + "\nComputer Chose: " + computerSelection]
       }
 
       else if
-        ((playerSelection === "rock" && computerSelection === "Paper") ||
-        (playerSelection === "paper" && computerSelection === "Scissors") ||
-        (playerSelection === "scissors" && computerSelection === "Rock")) {
+        ((playerSelection === "Rock" && computerSelection === "Paper") ||
+        (playerSelection === "Paper" && computerSelection === "Scissors") ||
+        (playerSelection === "Scissors" && computerSelection === "Rock")) {
         cpuCounter += 1;
         result = ["Computer wins round" + "\nPlayer Score: " + playerCounter + " | " + "Computer Score: " + cpuCounter + "\nComputer Chose: " + computerSelection];
       }
 
       else if
-        ((playerSelection === "rock" && computerSelection === "Scissors") ||
-        (playerSelection === "paper" && computerSelection === "Rock") ||
-        (playerSelection === "scissors" && computerSelection === "Paper")) {
+        ((playerSelection === "Rock" && computerSelection === "Scissors") ||
+        (playerSelection === "Paper" && computerSelection === "Rock") ||
+        (playerSelection === "Scissors" && computerSelection === "Paper")) {
         playerCounter += 1;
         result = ["Player wins round" + "\nPlayer Score: " + playerCounter + " | " + "Computer Score: " + cpuCounter + "\nComputer Chose: " + computerSelection];
       }
       (result);
 
+      function disableButtons() {
+        buttons.forEach(elem => {
+          elem.disabled = true
+        })
+      }
+
+      function endGame() {
+        if (playerCounter >= 5) {
+          alert2 = "Game Over! You Win!" + "\nPlayer Chose: " + playerSelection + " | Computer Chose: " + computerSelection + "\nFinal Score ~ Player: " + playerCounter + " | CPU: " + cpuCounter;
+        } else if (cpuCounter >= 5) {
+          alert2 = "Game Over! You Lost!" + "\nPlayer Chose: " + playerSelection + " | Computer Chose: " + computerSelection + "\nFinal Score ~ Player: " + playerCounter + " | CPU: " + cpuCounter;
+        }
+        disableButtons();
+      };
+
       while (playerCounter < 5 && cpuCounter < 5) {
 
         document.getElementById('result').innerHTML = result;
         return result;
+      }
+      if (playerCounter >= 5 || cpuCounter >= 5) {
+        endGame();
+
+        document.getElementById('result').innerHTML = alert2;
+        return alert2;
       }
     };
 
@@ -72,21 +92,10 @@
       button.addEventListener('click', function () {
         playRound(button.value)
       })
-    })
+    });
 
-    while (playerCounter >= 5 || cpuCounter >= 5) {
-      endGame();
-    }
+    resetBtn.addEventListener('click', () => location.reload());
 
-    function endGame() {
-      if (playerCounter >= 5) {
-        alert2 = "Game Over! You Win!";
-      } else if (cpuCounter >= 5) {
-        alert2 = "Game Over! You Lost!";
-      }
-      document.getElementById('alert2').innerHTML = alert2;
-      return alert2;
-    }
   </script>
 </body>
 
