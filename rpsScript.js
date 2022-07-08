@@ -20,7 +20,7 @@ function playRound(playerSelection) {
         ((playerSelection === "Rock 🗿" && computerSelection === "Rock") ||
         (playerSelection === "Paper 🧻" && computerSelection === "Paper") ||
         (playerSelection === "Scissors ✂️" && computerSelection === "Scissors")) {
-        result = ["Tie... 🎀" + "<br />" + "Our Score: " + playerCounter + " | " + "CPU Score: " + cpuCounter + "<br />" + "CPU Chose: " + computerSelection]
+        result = ["Tie... 🎀" + "<br/><br/>" + "Our Score: " + playerCounter + "<br/>" + "CPU Score: " + cpuCounter + "<br/>" + "CPU Chose: " + computerSelection]
     }
 
     else if
@@ -28,7 +28,7 @@ function playRound(playerSelection) {
         (playerSelection === "Paper 🧻" && computerSelection === "Scissors") ||
         (playerSelection === "Scissors ✂️" && computerSelection === "Rock")) {
         cpuCounter += 1;
-        result = ["CPU Wins 💾" + "<br />" + "Our Score: " + playerCounter + " | " + "CPU Score: " + cpuCounter + "<br />" + "CPU Chose: " + computerSelection];
+        result = ["CPU Wins 💾" + "<br/><br/>" + "Our Score: " + playerCounter + "<br/>" + "CPU Score: " + cpuCounter + "<br/>" + "CPU Chose: " + computerSelection];
     }
 
     else if
@@ -36,7 +36,7 @@ function playRound(playerSelection) {
         (playerSelection === "Paper 🧻" && computerSelection === "Rock") ||
         (playerSelection === "Scissors ✂️" && computerSelection === "Paper")) {
         playerCounter += 1;
-        result = ["We Win! Yay! ✨~" + "<br />" + "Our Score: " + playerCounter + " | " + "CPU Score: " + cpuCounter + "<br />" + "CPU Chose: " + computerSelection];
+        result = ["We Win! Yay! ✨~" + "<br/><br/>" + "Our Score: " + playerCounter + "<br/>" + "CPU Score: " + cpuCounter + "<br/>" + "CPU Chose: " + computerSelection];
     }
     (result);
 
@@ -48,9 +48,9 @@ function playRound(playerSelection) {
 
     function endGame() {
         if (playerCounter >= 5) {
-            alert2 = "Game Over! We Win! 🏆" + "<br />" + "Winning Choice: " + playerSelection + "<br />" + "Final Score ~ Us 🐋 : " + playerCounter + " | CPU 💾 : " + cpuCounter;
+            alert2 = "Game Over!" + "<br/>" + "We Win! 🏆" + "<br/><br/>" + "Winning Choice: " + playerSelection + "<br/><br/>" + "Final Score" + "<br/>" + "Us 🐋 : " + playerCounter + " | CPU 💾 : " + cpuCounter;
         } else if (cpuCounter >= 5) {
-            alert2 = "Game Over! We Lost :( 💔" + "<br />" + "Defeated By:" + computerSelection + "<br />" + "Final Score ~ Us 🐋 : " + playerCounter + " | CPU 💾 : " + cpuCounter;
+            alert2 = "Game Over! We Lost :( 💔" + "<br/><br/>" + "Poor Choice:" + playerSelection + "<br/><br/>" + "Final Score" + "<br/>" + "Us 🐋 : " + playerCounter + " | CPU 💾 : " + cpuCounter;
         }
         disableButtons();
     };
