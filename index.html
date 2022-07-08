@@ -2,19 +2,24 @@
 <html>
 
 <head>
+  <link rel="stylesheet" href="styles.css">
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Rock Paper Scissors</title>
 </head>
 
 <body>
-  <div style="margin-bottom: 20px">
-    <input type="button" value="Rock"></input>
-    <input type="button" value="Paper"></input>
-    <input type="button" value="Scissors"></input>
-  </div>
-  <div id="result"></div>
   <div>
-    <button id='reset'>Play Again!</button>
+    <input type="button" value="Rock 🗿"></input>
+    <input type="button" value="Paper 🧻"></input>
+    <input type="button" value="Scissors ✂️"></input>
+  </div>
+
+  <div id="result">~<br/>Are you ready?<br/>~ 
+  </div>
+  <div>
+    <button id='reset'>Play Again! 🎲</button>
   </div>
 
   <script>
@@ -37,26 +42,26 @@
       let computerSelection = computerPlay(choices);
 
       if
-        ((playerSelection === "Rock" && computerSelection === "Rock") ||
-        (playerSelection === "Paper" && computerSelection === "Paper") ||
-        (playerSelection === "Scissors" && computerSelection === "Scissors")) {
-        result = ["Tie!" + "\nPlayer Score: " + playerCounter + " | " + "Computer Score: " + cpuCounter + "\nComputer Chose: " + computerSelection]
+        ((playerSelection === "Rock 🗿" && computerSelection === "Rock") ||
+        (playerSelection === "Paper 🧻" && computerSelection === "Paper") ||
+        (playerSelection === "Scissors ✂️" && computerSelection === "Scissors")) {
+        result = ["Tie... 🎀" + "<br />" + "Our Score: " + playerCounter + " | " + "CPU Score: " + cpuCounter + "<br />" + "CPU Chose: " + computerSelection]
       }
 
       else if
-        ((playerSelection === "Rock" && computerSelection === "Paper") ||
-        (playerSelection === "Paper" && computerSelection === "Scissors") ||
-        (playerSelection === "Scissors" && computerSelection === "Rock")) {
+        ((playerSelection === "Rock 🗿" && computerSelection === "Paper") ||
+        (playerSelection === "Paper 🧻" && computerSelection === "Scissors") ||
+        (playerSelection === "Scissors ✂️" && computerSelection === "Rock")) {
         cpuCounter += 1;
-        result = ["Computer wins round" + "\nPlayer Score: " + playerCounter + " | " + "Computer Score: " + cpuCounter + "\nComputer Chose: " + computerSelection];
+        result = ["CPU Wins 💾" + "<br />" + "Our Score: " + playerCounter + " | " + "CPU Score: " + cpuCounter + "<br />" + "CPU Chose: " + computerSelection];
       }
 
       else if
-        ((playerSelection === "Rock" && computerSelection === "Scissors") ||
-        (playerSelection === "Paper" && computerSelection === "Rock") ||
-        (playerSelection === "Scissors" && computerSelection === "Paper")) {
+        ((playerSelection === "Rock 🗿" && computerSelection === "Scissors") ||
+        (playerSelection === "Paper 🧻" && computerSelection === "Rock") ||
+        (playerSelection === "Scissors ✂️" && computerSelection === "Paper")) {
         playerCounter += 1;
-        result = ["Player wins round" + "\nPlayer Score: " + playerCounter + " | " + "Computer Score: " + cpuCounter + "\nComputer Chose: " + computerSelection];
+        result = ["We Win! Yay! ✨~" + "<br />" + "Our Score: " + playerCounter + " | " + "CPU Score: " + cpuCounter + "<br />" + "CPU Chose: " + computerSelection];
       }
       (result);
 
@@ -68,9 +73,9 @@
 
       function endGame() {
         if (playerCounter >= 5) {
-          alert2 = "Game Over! You Win!" + "\nPlayer Chose: " + playerSelection + " | Computer Chose: " + computerSelection + "\nFinal Score ~ Player: " + playerCounter + " | CPU: " + cpuCounter;
+          alert2 = "Game Over! We Win! 🏆" + "<br />" + "Winning Choice: " + playerSelection + "<br />" + "Final Score ~ Us 🐋 : " + playerCounter + " | CPU 💾 : " + cpuCounter;
         } else if (cpuCounter >= 5) {
-          alert2 = "Game Over! You Lost!" + "\nPlayer Chose: " + playerSelection + " | Computer Chose: " + computerSelection + "\nFinal Score ~ Player: " + playerCounter + " | CPU: " + cpuCounter;
+          alert2 = "Game Over! We Lost :( 💔" + "<br />" + "Defeated By:" + computerSelection +  "<br />" + "Final Score ~ Us 🐋 : " + playerCounter + " | CPU 💾 : " + cpuCounter;
         }
         disableButtons();
       };
